@@ -25,7 +25,7 @@ module RsInterviewApp
 
     config.generators do |g|
       g.test_framework :rspec, fixture: true, views: false
-      g.fixture_replacement :factory_girl, dir: 'spec/support/factories'
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
