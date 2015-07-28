@@ -4,10 +4,10 @@ ruby '2.2.2'
 gem 'rails', '4.2.3'
 gem 'rails-api', require: 'rails-api/action_controller/api'
 gem 'grape', '~>0.12.0'
-gem "active_model_serializers", '0.9.3'
-gem "grape-active_model_serializers", '~>1.3.2'
+gem 'active_model_serializers', '0.9.3'
+gem 'grape-active_model_serializers', '~>1.3.2'
 
-gem 'pg', "~> 0.18.1"
+gem 'pg', '~> 0.18.1'
 # gem "redis-store", "~> 1.1.5"
 
 group :assets do
@@ -15,12 +15,12 @@ group :assets do
 end
 
 group :development do
-  gem "foreman"
-  gem "rubocop"
+  gem 'foreman'
+  gem 'rubocop'
   gem 'spring'
 
   # bulk import
-  gem 'activerecord-import', :require => false
+  gem 'activerecord-import', require: false
 end
 
 group :development, :test do
