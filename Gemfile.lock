@@ -209,6 +209,3 @@ DEPENDENCIES
   spring
   spring-commands-rspec (~> 1.0.2)
   therubyracer
-
-BUNDLED WITH
-   1.10.5
