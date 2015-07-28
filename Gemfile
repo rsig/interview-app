@@ -26,10 +26,14 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'spring-commands-rspec', '~> 1.0.2'
+end
+
+group :test do
   gem 'rspec-rails', '~> 3.2.0'
   gem 'rspec-mocks', '~> 3.2.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'faker', '~> 1.3.0'
   gem 'database_cleaner', '~> 1.2.0'
-  gem 'spring-commands-rspec', '~> 1.0.2'
+  gem 'airborne', '~> 0.1.15'
 end
