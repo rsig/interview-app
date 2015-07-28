@@ -1,4 +1,3 @@
-require 'airborne'
 require 'rails_helper'
 
 describe Store::V1 do
