@@ -29,8 +29,9 @@ module Carts
             requires :product_id, type: Integer, desc: "Product ID"
           end
           post do
-            product = Product.find(permitted_params[:product_id])
-            @cart.line_items.create!(:product => product)
+            li = @cart.add_product(permitted_params[:product_id])
+            li.save!
+            @cart
           end
 
           route_param :id do
