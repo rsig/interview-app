@@ -1,0 +1,1 @@
+module Carts  class V1 < Grape::API#     resource :carts do#       route_param :id do#         before do#   	       @cart = find_or_create_cart Cart.find(permitted_params[:cart_id])#         end##         # GET /api/v1/carts/:id#         desc "Returns cart for :id"#         get do#           @cart#         end#       end#     end  endend
