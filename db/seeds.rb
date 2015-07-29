@@ -71,6 +71,3 @@ Cart.find_in_batches(batch_size: 50) do |carts|
     order.save
   end
 end
-
-puts "seeding User"
-User.create(email: "name@email.com", password: "supersecret")
