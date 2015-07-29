@@ -3,7 +3,7 @@ module Defaults
     extend ActiveSupport::Concern
 
     included do
-      version "v1", using: :path
+      version 'v1', using: :path
       default_format :json
       # Adds support for the extension `.json`: https://github.com/intridea/grape/pull/809
       # Might change in future where this is not needed
@@ -23,7 +23,7 @@ module Defaults
 
       rescue_from ActiveRecord::RecordNotFound do |e|
         Rails.logger.debug "response: Record not found.\n\t#{e.inspect}\n#{e.backtrace.join("\n")}"
-        error_response(message: "Record not found.", status: 404)
+        error_response(message: 'Record not found.', status: 404)
       end
 
       rescue_from ActiveRecord::RecordInvalid do |e|
