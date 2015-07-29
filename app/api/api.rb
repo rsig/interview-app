@@ -4,4 +4,5 @@ class API < Grape::API
   mount Products::V1
   mount Stores::V1
   mount Carts::V1
+  mount Orders::V1
 end

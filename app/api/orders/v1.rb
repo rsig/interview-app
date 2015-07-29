@@ -11,6 +11,12 @@ module Orders
           Order.find permitted_params[:id]
         end
       end # route_param :id do
+
+      # GET /api/v1/orders
+      desc "Returns all orders and their line items"
+      get do
+        Order.all
+      end
     end # resource :orders
   end
 end
