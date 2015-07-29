@@ -9,6 +9,7 @@ gem 'grape-active_model_serializers', '~>1.3.2'
 gem 'hashie', "~> 3.4.2"
 # fixes ActiveModel::ForbiddenAttributesError with hashie
 gem "hashie-forbidden_attributes", "~>0.1.1"
+gem 'devise'
 
 gem 'pg', '~> 0.18.1'
 # gem "redis-store", "~> 1.1.5"
@@ -21,7 +22,12 @@ group :development do
   gem 'foreman'
   gem 'rubocop'
   gem 'spring'
-
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "pry-nav"
+  gem "pry-rails"
+  gem "pry-stack_explorer"
+  gem "pry-theme"
   # bulk import
   gem 'activerecord-import'
 end
