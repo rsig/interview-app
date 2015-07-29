@@ -23,12 +23,12 @@ class User < ActiveRecord::Base
   # Class Methods
   #-----------------------------------------------------------------------------
 
-  def self.authenticate_token!(id, authentication_token)
-    user = find(id)
-    if Devise.secure_compare(user.authentication_token, authentication_token)
-      user
-    end
-  end
+  # def self.authenticate_token!(id, authentication_token)
+  #   user = find(id)
+  #   if Devise.secure_compare(user.authentication_token, authentication_token)
+  #     user
+  #   end
+  # end
 
   def self.sign_in(email, password)
     if user = self.find_for_database_authentication({email: email})
@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
 
   def authentication_token_atts
     {
-      authentication_token: SecureRandom.urlsafe_base64(15).tr('lIO0', 'sxyz'),
+      authentication_token:  SecureRandom.hex,
     }
   end
 

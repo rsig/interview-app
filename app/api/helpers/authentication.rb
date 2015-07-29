@@ -10,10 +10,6 @@ module Authentication
   end
 
   def authenticated
-    if creds = headers['Authorization'].try(:split, ',')
-      @user = User.authenticate_token!(creds.first, creds.last)
-    else
-      error!('Unauthorized. Invalid Token Credentials', 401)
-    end
+    @user = User.find_by authentication_token: headers['Authorization']
   end
 end
