@@ -6,6 +6,9 @@ gem 'rails-api', require: 'rails-api/action_controller/api'
 gem 'grape', '~>0.12.0'
 gem 'active_model_serializers', '0.9.3'
 gem 'grape-active_model_serializers', '~>1.3.2'
+gem 'hashie', "~> 3.4.2"
+# fixes ActiveModel::ForbiddenAttributesError with hashie
+gem "hashie-forbidden_attributes", "~>0.1.1"
 
 gem 'pg', '~> 0.18.1'
 # gem "redis-store", "~> 1.1.5"
@@ -20,7 +23,7 @@ group :development do
   gem 'spring'
 
   # bulk import
-  gem 'activerecord-import', require: false
+  gem 'activerecord-import'
 end
 
 group :development, :test do
