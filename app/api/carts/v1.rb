@@ -22,6 +22,14 @@ module Carts
           @cart
         end
 
+
+        # DELETE /api/v1/carts/:id
+        desc 'Empties Cart'
+        delete do
+          @cart.destroy!
+          {status: 'success'}
+        end
+
         resource :line_items do
           # POST /api/v1/line_items
           desc 'Adds Product to Cart'
