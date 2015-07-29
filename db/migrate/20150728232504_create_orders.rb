@@ -5,8 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.text :address
       t.string :email
       t.string :pay_type
-      
-      t.references :line_items, index: true
+
       t.timestamps null: false
     end
   end
