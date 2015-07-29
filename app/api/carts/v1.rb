@@ -7,6 +7,11 @@ module Carts
         Cart.create()
       end
 
+      desc "List all the carts"
+      get do
+        Cart.all
+      end
+
       params do
         requires :id, type: Integer, desc: "Cart ID"
       end
@@ -31,7 +36,7 @@ module Carts
         end
 
         resource :line_items do
-          # POST /api/v1/line_items
+          # POST /api/v1/cart/:id/line_items
           desc 'Adds Product to Cart'
           params do
             requires :product_id, type: Integer, desc: "Product ID"
@@ -47,10 +52,10 @@ module Carts
               @cart = Cart.find(permitted_params[:id])
             end
 
-            # GET /api/v1/carts/:id
-            desc 'Returns Cart for :id'
+            # GET /api/v1/carts/:id/line_items/:id
+            desc 'Returns Line Item for :id'
             get do
-              @cart
+              @cart.line_items.find(permitted_params[:id])
             end
           end
         end # resource :line_items
