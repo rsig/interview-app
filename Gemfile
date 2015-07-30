@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'rails-api', require: 'rails-api/action_controller/api'
@@ -11,11 +10,7 @@ gem 'hashie', "~> 3.4.2"
 gem "hashie-forbidden_attributes", "~>0.1.1"
 
 gem 'pg', '~> 0.18.1'
-# gem "redis-store", "~> 1.1.5"
-
-group :assets do
-  gem 'therubyracer', platforms: :ruby
-end
+# gem 'mysql2'
 
 group :development do
   gem 'foreman'
