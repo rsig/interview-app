@@ -13,12 +13,12 @@ module Carts
       end
 
       params do
-        requires :id, type: Integer, desc: "Cart ID"
+        requires :cart_id, type: Integer, desc: "Cart ID"
       end
-      route_param :id do
+      route_param :cart_id do
 
         before do
-          @cart = Cart.find(permitted_params[:id])
+          @cart = Cart.find(permitted_params[:cart_id])
         end
 
         # GET /api/v1/carts/:id
@@ -47,15 +47,18 @@ module Carts
             @cart
           end
 
-          route_param :id do
+          params do
+            requires :cart_id, type: Integer, desc: "Cart ID"
+          end
+          route_param :cart_id do
             before do
-              @cart = Cart.find(permitted_params[:id])
+              @cart = Cart.find(permitted_params[:cart_id])
             end
 
             # GET /api/v1/carts/:id/line_items/:id
             desc 'Returns Line Item for :id'
             get do
-              @cart.line_items.find(permitted_params[:id])
+              @cart.line_items.find(permitted_params[:cart_id])
             end
           end
         end # resource :line_items
