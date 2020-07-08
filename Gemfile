@@ -33,5 +33,5 @@ group :test do
   gem 'rspec-mocks', '~> 3.2.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'database_cleaner', '~> 1.2.0'
-  gem 'airborne', '~> 0.1.15'
+  gem 'airborne', '~> 0.2.6'
 end
